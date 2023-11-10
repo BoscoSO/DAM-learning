@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 13:40:24, 01/12/2020 by Hibernate Tools 5.2.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="library" dynamic-insert="false" dynamic-update="false" mutable="true" name="basedatos.Book" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="book">
+        <id name="idBook" type="java.lang.Integer">
+            <column name="idBook"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="code" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="code"/>
+        </property>
+        <property generated="never" lazy="false" name="title" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="title"/>
+        </property>
+        <property generated="never" lazy="false" name="authors" optimistic-lock="true" type="string" unique="false">
+            <column length="300" name="authors"/>
+        </property>
+        <property generated="never" lazy="false" name="year" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="year"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="loans" optimistic-lock="true" sort="unsorted" table="loan">
+            <key on-delete="noaction">
+                <column name="idBook"/>
+            </key>
+            <one-to-many class="basedatos.Loan" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

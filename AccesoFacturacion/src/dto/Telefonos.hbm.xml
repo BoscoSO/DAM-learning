@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 11 ene. 2021 13:26:11 by Hibernate Tools 5.2.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="facturacion" dynamic-insert="false" dynamic-update="false" mutable="true" name="dto.Telefonos" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="telefonos">
+        <id name="idTelefono" type="java.lang.Integer">
+            <column name="idTelefono"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="dto.Clientes" embed-xml="true" fetch="select" insert="true" name="clientes" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="idCliente"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="descricion" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="descricion"/>
+        </property>
+        <property generated="never" lazy="false" name="numero" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="numero"/>
+        </property>
+    </class>
+</hibernate-mapping>

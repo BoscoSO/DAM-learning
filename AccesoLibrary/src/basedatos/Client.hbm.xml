@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 13:40:24, 01/12/2020 by Hibernate Tools 5.2.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="library" dynamic-insert="false" dynamic-update="false" mutable="true" name="basedatos.Client" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="client">
+        <id name="idClient" type="java.lang.Integer">
+            <column name="idClient"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="dni" optimistic-lock="true" type="string" unique="false">
+            <column length="9" name="DNI"/>
+        </property>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="name"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="email"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="loans" optimistic-lock="true" sort="unsorted" table="loan">
+            <key on-delete="noaction">
+                <column name="idClient"/>
+            </key>
+            <one-to-many class="basedatos.Loan" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

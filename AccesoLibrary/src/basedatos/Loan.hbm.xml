@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 13:40:24, 01/12/2020 by Hibernate Tools 5.2.12.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="library" dynamic-insert="false" dynamic-update="false" mutable="true" name="basedatos.Loan" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="loan">
+        <id name="idLoan" type="java.lang.Integer">
+            <column name="idLoan"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="basedatos.Book" embed-xml="true" fetch="select" insert="true" name="book" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="idBook"/>
+        </many-to-one>
+        <many-to-one class="basedatos.Client" embed-xml="true" fetch="select" insert="true" name="client" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="idClient"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="date" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="date"/>
+        </property>
+        <property generated="never" lazy="false" name="borrowed" optimistic-lock="true" type="java.lang.Boolean" unique="false">
+            <column name="borrowed"/>
+        </property>
+    </class>
+</hibernate-mapping>

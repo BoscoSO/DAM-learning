@@ -1,0 +1,45 @@
+<Order>
+  <id>1</id>
+  <cliente>
+    <name>PACO</name>
+    <surname>Fernandez</surname>
+    <dni>123456</dni>
+  </cliente>
+  <orderRows>
+    <OrderRow>
+      <product>
+        <id>2</id>
+        <productName>Silla</productName>
+        <description>es una silla</description>
+        <picture>/silla.png</picture>
+        <price>60.0</price>
+      </product>
+      <amount>2</amount>
+      <price>120.0</price>
+    </OrderRow>
+    <OrderRow>
+      <product>
+        <id>2</id>
+        <productName>Cama</productName>
+        <description>es una cama</description>
+        <picture>/cama.png</picture>
+        <price>120.0</price>
+      </product>
+      <amount>1</amount>
+      <price>120.0</price>
+    </OrderRow>
+    <OrderRow>
+      <product>
+        <id>2</id>
+        <productName>Mesa</productName>
+        <description>es una mesa</description>
+        <picture>/mesa.png</picture>
+        <price>40.0</price>
+      </product>
+      <amount>3</amount>
+      <price>120.0</price>
+    </OrderRow>
+  </orderRows>
+  <delivered>false</delivered>
+  <price>360.0</price>
+</Order>

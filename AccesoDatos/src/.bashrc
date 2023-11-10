@@ -1,0 +1,1 @@
+export CLASSPATH=.;D:\Propietario\SanClemente\DAM2\Acceso a Datos\libreriasEclipse\json-simple-1.1.1.jar;D:\Propietario\SanClemente\DAM2\Acceso a Datos\libreriasEclipse\kxml2-2.3.0.jar;D:\Propietario\SanClemente\DAM2\Acceso a Datos\libreriasEclipse\xstream-1.4.3\lib\xstream-1.4.3.jar
